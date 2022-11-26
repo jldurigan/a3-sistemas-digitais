@@ -2,7 +2,16 @@ var btns = document.querySelectorAll("button");
 
 for(var i = 0; i<btns.length; i++){
     btns[i].addEventListener("click", function(event){
-        alert("Botão clicado: " + this.innerHTML);
+            if(this.textContent == "Off" || this.textContent == "Vazio"){
+                this.textContent = "On";
+                this.style.backgroundColor = "green";
+                this.value = true;
+            }else{
+                this.textContent = "Off";
+                this.style.backgroundColor = "red";
+                this.value = false;
+            }
+        alert("Botão clicado: " + this.innerHTML + " " + this.value);
     })
 }
 
