@@ -2,6 +2,33 @@ var btns = document.querySelectorAll("button");
 
 for(var i = 0; i<btns.length; i++){
     btns[i].addEventListener("click", function(event){
+        this.value = this.value=="false";
+        var tipoPorta = this.name;
+        var portas = document.getElementsByName(tipoPorta)
+        
+        switch(tipoPorta){
+            case 'portaNot':
+                alert(portaNot(this.value));
+                break;
+                case 'portaAnd':
+                    alert(portaAnd(portas[0].value, portas[1].value));
+                    break;
+                    case 'portaNand':
+                        alert(portaNand(portas[0].value, portas[1].value));
+                        break;
+                        case 'portaOr':
+                            alert(portaOr(portas[0].value, portas[1].value));
+                            break;
+                            case 'portaNor':
+                                alert(portaNor(portas[0].value, portas[1].value));
+                                break;
+                                case 'portaXor':
+                                    alert(portaXor(portas[0].value, portas[1].value));
+                                    break;
+                                    case 'portaNxor':
+                                        alert(portaNxor(portas[0].value, portas[1].value));
+                                        break;
+        }
             if(this.textContent == "Off" || this.textContent == "Vazio"){
                 this.textContent = "On";
                 this.style.backgroundColor = "green";
