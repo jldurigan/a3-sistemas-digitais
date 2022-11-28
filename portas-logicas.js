@@ -28,6 +28,7 @@ for (var i = 0; i < btns.length; i++) {
 
         switch (tipoPorta) {
             case 'portaNot':
+                alert(portaNot(btns[0].value));
                 if(portaNot(this.value))
                     led.style.backgroundColor="yellow";
                 break;
@@ -62,14 +63,14 @@ function resetPortas() {
 }
 
 function portaNot(entradaA) {
-    if (!entradaA) {
+    if (entradaA == "false") {
         return true
     }
     return false
 }
 
 function portaAnd(entradaA, entradaB) {
-    if (entradaA && entradaB) {
+    if ((entradaA == entradaB) && (entradaA == "true")){
         return true
     }
     return false
@@ -83,28 +84,28 @@ function portaNand(entradaA, entradaB) {
 }
 
 function portaOr(entradaA, entradaB) {
-    if (entradaA != entradaB || entradaA && entradaB) {
+    if (entradaA != entradaB || ((entradaA && entradaB)!="false")) {
         return true
     }
     return false
 }
 
 function portaNor(entradaA, entradaB) {
-    if (!entradaA && !entradaB) {
+    if (((entradaA == "false") && (entradaB == "false"))) {
         return true
     }
     return false
 }
 
 function portaXor(entradaA, entradaB) {
-    if (entradaA && !entradaB || !entradaA && entradaB) {
+    if (entradaA != entradaB) {
         return true
     }
     return false
 }
 
 function portaNxor(entradaA, entradaB) {
-    if (entradaA && entradaB || !entradaA && !entradaB) {
+    if (entradaA == entradaB) {
         return true
     }
     return false
