@@ -1,11 +1,75 @@
 var select = document.getElementById("selectPortaLogica");
 var divPortaLogica = document.getElementById("divPortaLogica");
+var divImagemNot = document.getElementById("imgNot");
+var divImagemAnd = document.getElementById("imgAnd");
+var divImagemNand = document.getElementById("imgNand");
+var divImagemOr = document.getElementById("imgOr");
+var divImagemNor = document.getElementById("imgNor");
+var divImagemXor = document.getElementById("imgXor");
+var divImagemNxor = document.getElementById("imgNxor");
 
 select.addEventListener("change", function () {
     divPortaLogica.className = this.options[this.selectedIndex].value;
     resetPortas();
-    if (divPortaLogica.className == "portaNot")
+    resetImagens();
+    if (divPortaLogica.className == "portaNot"){
         btns[1].style.display = "none";
+        divImagemAnd.style.display = "none";
+        divImagemNand.style.display = "none";
+        divImagemOr.style.display = "none";
+        divImagemNor.style.display = "none";
+        divImagemXor.style.display = "none";
+        divImagemNxor.style.display = "none";
+        
+    }
+    if (divPortaLogica.className == "portaAnd"){
+        divImagemNot.style.display = "none";
+        divImagemNand.style.display = "none";
+        divImagemOr.style.display = "none";
+        divImagemNor.style.display = "none";
+        divImagemXor.style.display = "none";
+        divImagemNxor.style.display = "none";
+    }
+    if (divPortaLogica.className == "portaNand"){
+        divImagemNot.style.display = "none";
+        divImagemAnd.style.display = "none";
+        divImagemOr.style.display = "none";
+        divImagemNor.style.display = "none";
+        divImagemXor.style.display = "none";
+        divImagemNxor.style.display = "none";
+    }
+    if (divPortaLogica.className == "portaOr"){
+        divImagemNot.style.display = "none";
+        divImagemAnd.style.display = "none";
+        divImagemNand.style.display = "none";
+        divImagemNor.style.display = "none";
+        divImagemXor.style.display = "none";
+        divImagemNxor.style.display = "none";
+    }
+    if (divPortaLogica.className == "portaNor"){
+        divImagemNot.style.display = "none";
+        divImagemAnd.style.display = "none";
+        divImagemNand.style.display = "none";
+        divImagemOr.style.display = "none";
+        divImagemXor.style.display = "none";
+        divImagemNxor.style.display = "none";
+    }
+    if (divPortaLogica.className == "portaXor"){
+        divImagemNot.style.display = "none";
+        divImagemAnd.style.display = "none";
+        divImagemNand.style.display = "none";
+        divImagemOr.style.display = "none";
+        divImagemNor.style.display = "none";
+        divImagemNxor.style.display = "none";
+    }
+    if (divPortaLogica.className == "portaNxor"){
+        divImagemNot.style.display = "none";
+        divImagemAnd.style.display = "none";
+        divImagemNand.style.display = "none";
+        divImagemOr.style.display = "none";
+        divImagemNor.style.display = "none";
+        divImagemXor.style.display = "none";
+    }
 });
 
 var btns = document.querySelectorAll("#divPortaLogica button");
@@ -60,6 +124,16 @@ function resetPortas() {
         btns[i].value = "false";
         btns[i].style.display = "";
     }
+}
+
+function resetImagens() {
+    divImagemAnd.style.display = "";
+    divImagemNand.style.display = "";
+    divImagemNot.style.display = "";
+    divImagemOr.style.display = "";
+    divImagemNor.style.display = "";
+    divImagemXor.style.display = "";
+    divImagemNxor.style.display = "";
 }
 
 function portaNot(entradaA) {

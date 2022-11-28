@@ -1,0 +1,36 @@
+#divPortaLogica {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    height: 30%;
+    position: relative;
+}
+
+#divImg {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    height: 30%;
+    position: relative;
+}
+
+#selectPortaLogica {
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+
+
+
+#portaA {
+    margin-top: 20%;
+    margin-left: 10%;
+    display: block;
+}
+
+#portaB {
+    margin-top: 10%;
+    margin-left: 10%;
+    display: block;
+}

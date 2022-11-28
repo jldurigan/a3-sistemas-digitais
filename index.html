@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -16,21 +17,29 @@
         <option selected>Selecione uma porta lógica</option>
         <option value="portaNot">Porta Not</option>
         <option value="portaAnd">Porta And</option>
+        <option value="portaNand">Porta Nand</option>
         <option value="portaOr">Porta Or</option>
         <option value="portaNor">Porta Nor (NOT OR)</option>
         <option value="portaXor">Porta Xor (EXCLUSIVE OR)</option>
         <option value="portaNxor">Porta Nxor (EXCLUSIVE NOT OR)</option>
-        
     </select>
+    
     <div id="divPortaLogica">
         <button id="portaA" value="false" type="button" class="btn btn-danger"
             data-bs-toggle="button">Off</button>
         <button id="portaB" value="false" type="button" class="btn btn-danger"
             data-bs-toggle="button">Off</button>
-
-        <label id="ledSaida" class="btn btn-primary" disabled data-bs-toggle="button">Saída</label>
     </div>
 
+    <div id="divImg">
+        <img id="imgNot" src="/img/porta-not.webp">
+        <img id="imgAnd" src="/img/porta-and.webp">
+        <img id="imgOr" src="/img/porta-or.webp">
+        <img id="imgNor" src="/img/porta-nor.webp">
+        <img id="imgNand" src="/img/porta-nand.webp">
+        <img id="imgXor" src="/img/porta-xor.webp">
+        <img id="imgNxor" src="/img/porta-Nxor.webp">
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
