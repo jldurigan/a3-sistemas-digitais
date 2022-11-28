@@ -1,30 +1,35 @@
 var select = document.getElementById("selectPortaLogica");
 var divPortaLogica = document.getElementById("divPortaLogica");
 
-select.addEventListener("change", function(){
+select.addEventListener("change", function () {
     divPortaLogica.className = this.options[this.selectedIndex].value;
+    resetPortas();
+    if (divPortaLogica.className == "portaNot")
+        btns[1].style.display = "none";
 });
 
 var btns = document.querySelectorAll("#divPortaLogica button");
+var led = document.getElementById("#ledSaida");
 
 for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function (event) {
 
-        if (this.value == "false" || this.value == "null") {
+        this.value = this.value == "false";
+
+        if (this.value == "true") {
             this.textContent = "On";
-            this.style.backgroundColor = "green";
-            this.value = true;
-        } else {
+            this.className = "btn btn-success";
+        } else if (this.value == "false") {
             this.textContent = "Off";
-            this.style.backgroundColor = "red";
-            this.value = false;
+            this.className = "btn btn-danger";
         }
 
         var tipoPorta = divPortaLogica.className;
 
         switch (tipoPorta) {
             case 'portaNot':
-                alert(portaNot(this.value));
+                if(portaNot(this.value))
+                    led.style.backgroundColor="yellow";
                 break;
             case 'portaAnd':
                 alert(portaAnd(btns[0].value, btns[1].value));
@@ -46,6 +51,14 @@ for (var i = 0; i < btns.length; i++) {
                 break;
         }
     })
+}
+
+function resetPortas() {
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].className = "btn btn-danger";
+        btns[i].value = "false";
+        btns[i].style.display = "";
+    }
 }
 
 function portaNot(entradaA) {
