@@ -1,36 +1,39 @@
 #divPortaLogica {
-    display: inline-block;
+    float:left;
     width: 30%;
-    text-align: center;
-    height: 30%;
-    position: relative;
+    height:280px;
+}
+#divImg{
+    float:left;
+    width: 30%;
+    height:280px;
+}
+#divResultado{
+    float:right;
+    width: 30%;
+    height:280px;
+    transform: rotate(90deg);
 }
 
-#divImg {
-    display: inline-block;
-    width: 30%;
-    text-align: center;
-    height: 30%;
-    position: relative;
-}
 
 #selectPortaLogica {
     width: 50%;
     text-align: center;
     margin-left: 25%;
     margin-top: 5%;
+    margin-bottom: 10%;
 }
 
 
 
 #portaA {
-    margin-top: 20%;
-    margin-left: 10%;
+    margin-top: 13%;
+    margin-left: 50%;
     display: block;
 }
 
 #portaB {
     margin-top: 10%;
-    margin-left: 10%;
+    margin-left: 50%;
     display: block;
 }

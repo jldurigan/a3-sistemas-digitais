@@ -7,22 +7,27 @@ var divImagemOr = document.getElementById("imgOr");
 var divImagemNor = document.getElementById("imgNor");
 var divImagemXor = document.getElementById("imgXor");
 var divImagemNxor = document.getElementById("imgNxor");
+var divlamapadaApagada = document.getElementById("imgApagada");
+var divlamapadaAcesa = document.getElementById("imgAcesa");
 
 select.addEventListener("change", function () {
     divPortaLogica.className = this.options[this.selectedIndex].value;
     resetPortas();
     resetImagens();
-    if (divPortaLogica.className == "portaNot"){
+    resetLampada();
+    if (divPortaLogica.className == "portaNot") {
         btns[1].style.display = "none";
+        divlamapadaAcesa.style.display = "";
+        divlamapadaApagada.style.display = "none";
         divImagemAnd.style.display = "none";
         divImagemNand.style.display = "none";
         divImagemOr.style.display = "none";
         divImagemNor.style.display = "none";
         divImagemXor.style.display = "none";
         divImagemNxor.style.display = "none";
-        
+
     }
-    if (divPortaLogica.className == "portaAnd"){
+    if (divPortaLogica.className == "portaAnd") {
         divImagemNot.style.display = "none";
         divImagemNand.style.display = "none";
         divImagemOr.style.display = "none";
@@ -30,7 +35,9 @@ select.addEventListener("change", function () {
         divImagemXor.style.display = "none";
         divImagemNxor.style.display = "none";
     }
-    if (divPortaLogica.className == "portaNand"){
+    if (divPortaLogica.className == "portaNand") {
+        divlamapadaAcesa.style.display = "";
+        divlamapadaApagada.style.display = "none";
         divImagemNot.style.display = "none";
         divImagemAnd.style.display = "none";
         divImagemOr.style.display = "none";
@@ -38,7 +45,7 @@ select.addEventListener("change", function () {
         divImagemXor.style.display = "none";
         divImagemNxor.style.display = "none";
     }
-    if (divPortaLogica.className == "portaOr"){
+    if (divPortaLogica.className == "portaOr") {
         divImagemNot.style.display = "none";
         divImagemAnd.style.display = "none";
         divImagemNand.style.display = "none";
@@ -46,7 +53,9 @@ select.addEventListener("change", function () {
         divImagemXor.style.display = "none";
         divImagemNxor.style.display = "none";
     }
-    if (divPortaLogica.className == "portaNor"){
+    if (divPortaLogica.className == "portaNor") {
+        divlamapadaAcesa.style.display = "";
+        divlamapadaApagada.style.display = "none";
         divImagemNot.style.display = "none";
         divImagemAnd.style.display = "none";
         divImagemNand.style.display = "none";
@@ -54,7 +63,7 @@ select.addEventListener("change", function () {
         divImagemXor.style.display = "none";
         divImagemNxor.style.display = "none";
     }
-    if (divPortaLogica.className == "portaXor"){
+    if (divPortaLogica.className == "portaXor") {
         divImagemNot.style.display = "none";
         divImagemAnd.style.display = "none";
         divImagemNand.style.display = "none";
@@ -62,7 +71,9 @@ select.addEventListener("change", function () {
         divImagemNor.style.display = "none";
         divImagemNxor.style.display = "none";
     }
-    if (divPortaLogica.className == "portaNxor"){
+    if (divPortaLogica.className == "portaNxor") {
+        divlamapadaAcesa.style.display = "";
+        divlamapadaApagada.style.display = "none";
         divImagemNot.style.display = "none";
         divImagemAnd.style.display = "none";
         divImagemNand.style.display = "none";
@@ -92,27 +103,67 @@ for (var i = 0; i < btns.length; i++) {
 
         switch (tipoPorta) {
             case 'portaNot':
-                alert(portaNot(btns[0].value));
-                if(portaNot(this.value))
-                    led.style.backgroundColor="yellow";
+                if (portaNot(btns[0].value) == true) {
+                    divlamapadaApagada.style.display = "none";
+                    divlamapadaAcesa.style.display = "";
+                } else {
+                    divlamapadaApagada.style.display = "";
+                    divlamapadaAcesa.style.display = "none";
+                };
                 break;
             case 'portaAnd':
-                alert(portaAnd(btns[0].value, btns[1].value));
+                if (portaAnd(btns[0].value, btns[1].value) == true) {
+                    divlamapadaApagada.style.display = "none";
+                    divlamapadaAcesa.style.display = "";
+                } else {
+                    divlamapadaApagada.style.display = "";
+                    divlamapadaAcesa.style.display = "none";
+                };
                 break;
             case 'portaNand':
-                alert(portaNand(btns[0].value, btns[1].value));
+                if (portaNand(btns[0].value, btns[1].value) == true) {
+                    divlamapadaApagada.style.display = "none";
+                    divlamapadaAcesa.style.display = "";
+                } else {
+                    divlamapadaApagada.style.display = "";
+                    divlamapadaAcesa.style.display = "none";
+                };
                 break;
             case 'portaOr':
-                alert(portaOr(btns[0].value, btns[1].value));
+                if (portaOr(btns[0].value, btns[1].value) == true) {
+                    divlamapadaApagada.style.display = "none";
+                    divlamapadaAcesa.style.display = "";
+                } else {
+                    divlamapadaApagada.style.display = "";
+                    divlamapadaAcesa.style.display = "none";
+                };
                 break;
             case 'portaNor':
-                alert(portaNor(btns[0].value, btns[1].value));
+                if (portaNor(btns[0].value, btns[1].value) == true) {
+                    divlamapadaApagada.style.display = "none";
+                    divlamapadaAcesa.style.display = "";
+                } else {
+                    divlamapadaApagada.style.display = "";
+                    divlamapadaAcesa.style.display = "none";
+                };
                 break;
             case 'portaXor':
-                alert(portaXor(btns[0].value, btns[1].value));
+                if (portaXor(btns[0].value, btns[1].value) == true) {
+                    divlamapadaApagada.style.display = "none";
+                    divlamapadaAcesa.style.display = "";
+                } else {
+                    divlamapadaApagada.style.display = "";
+                    divlamapadaAcesa.style.display = "none";
+                };
                 break;
             case 'portaNxor':
-                alert(portaNxor(btns[0].value, btns[1].value));
+                if (portaNxor(btns[0].value, btns[1].value) == true) {
+                    divlamapadaApagada.style.display = "none";
+                    divlamapadaAcesa.style.display = "";
+                } else {
+                    divlamapadaApagada.style.display = "";
+                    divlamapadaAcesa.style.display = "none";
+                };
                 break;
         }
     })
@@ -122,6 +173,7 @@ function resetPortas() {
     for (var i = 0; i < btns.length; i++) {
         btns[i].className = "btn btn-danger";
         btns[i].value = "false";
+        btns[i].textContent = "Off";
         btns[i].style.display = "";
     }
 }
@@ -136,6 +188,11 @@ function resetImagens() {
     divImagemNxor.style.display = "";
 }
 
+function resetLampada() {
+    divlamapadaAcesa.style.display = "none"
+    divlamapadaApagada.style.display = "";
+}
+
 function portaNot(entradaA) {
     if (entradaA == "false") {
         return true
@@ -144,21 +201,21 @@ function portaNot(entradaA) {
 }
 
 function portaAnd(entradaA, entradaB) {
-    if ((entradaA == entradaB) && (entradaA == "true")){
+    if ((entradaA == entradaB) && (entradaA == "true")) {
         return true
     }
     return false
 }
 
 function portaNand(entradaA, entradaB) {
-    if (!entradaA && !entradaB || entradaA != entradaB) {
-        return true
+    if (entradaA == "true" && entradaB == "true") {
+        return false
     }
-    return false
+    return true
 }
 
 function portaOr(entradaA, entradaB) {
-    if (entradaA != entradaB || ((entradaA && entradaB)!="false")) {
+    if (entradaA != entradaB || ((entradaA && entradaB) != "false")) {
         return true
     }
     return false

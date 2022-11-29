@@ -14,7 +14,7 @@
 <body>
 
     <select id="selectPortaLogica" class="form-select" aria-label="Default select example">
-        <option selected>Selecione uma porta lógica</option>
+        <option value="null">Selecione uma porta lógica</option>
         <option value="portaNot">Porta Not</option>
         <option value="portaAnd">Porta And</option>
         <option value="portaNand">Porta Nand</option>
@@ -23,22 +23,27 @@
         <option value="portaXor">Porta Xor (EXCLUSIVE OR)</option>
         <option value="portaNxor">Porta Nxor (EXCLUSIVE NOT OR)</option>
     </select>
-    
-    <div id="divPortaLogica">
-        <button id="portaA" value="false" type="button" class="btn btn-danger"
-            data-bs-toggle="button">Off</button>
-        <button id="portaB" value="false" type="button" class="btn btn-danger"
-            data-bs-toggle="button">Off</button>
-    </div>
 
-    <div id="divImg">
-        <img id="imgNot" src="/img/porta-not.webp">
-        <img id="imgAnd" src="/img/porta-and.webp">
-        <img id="imgOr" src="/img/porta-or.webp">
-        <img id="imgNor" src="/img/porta-nor.webp">
-        <img id="imgNand" src="/img/porta-nand.webp">
-        <img id="imgXor" src="/img/porta-xor.webp">
-        <img id="imgNxor" src="/img/porta-Nxor.webp">
+    <div id="simulacao">
+        <div id="divPortaLogica">
+            <button id="portaA" value="false" type="button" class="btn btn-danger" data-bs-toggle="button" style="display: none;">Off</button>
+            <button id="portaB" value="false" type="button" class="btn btn-danger" data-bs-toggle="button" style="display: none;">Off</button>
+        </div>
+
+        <div id="divImg">
+            <img id="imgNot" src="/img/porta-not.webp">
+            <img id="imgAnd" src="/img/porta-and.webp">
+            <img id="imgOr" src="/img/porta-or.webp">
+            <img id="imgNor" src="/img/porta-nor.webp">
+            <img id="imgNand" src="/img/porta-nand.webp">
+            <img id="imgXor" src="/img/porta-xor.webp">
+            <img id="imgNxor" src="/img/porta-Nxor.webp">
+        </div>
+
+        <div id="divResultado">
+            <img class="Lampada" id="imgApagada" src="/img/lampada-apagada.jpeg" width="320" height="250" style="display: none;">
+            <img class="Lampada" id="imgAcesa" src="/img/lampada-acesa.jpeg" width="320" height="250" style="display: none;">
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
