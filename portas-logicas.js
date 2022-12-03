@@ -153,7 +153,7 @@ select.addEventListener("change", function () {
         btns[0].style.display = "none";
         btns[1].style.display = "none";
         divlamapadaApagada.style.display = "none";
-        divImagTV.style.display= "none";
+        divImagTV.style.display = "none";
     }
 });
 
