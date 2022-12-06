@@ -12,9 +12,29 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a id="fonte"  class="navbar-brand" href="#"><b>SISTEMAS DIGITAIS</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a id="fonte" class="nav-link active" aria-current="page" href="index.html"><b>HOME</b></a>
+                    </li>
 
+                    <li class="nav-item">
+                        <a id="fonte" class="nav-link active" aria-current="page" href="membros.html"><b>MEMBROS</b></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <select id="selectPortaLogica" class="form-select" aria-label="Default select example">
-        <option selected>Selecione uma porta lógica</option>
+        <option value="default">Selecione uma porta lógica</option>
         <option value="portaNot">Porta Not</option>
         <option value="portaAnd">Porta And</option>
         <option value="portaNand">Porta Nand</option>
@@ -23,22 +43,113 @@
         <option value="portaXor">Porta Xor (EXCLUSIVE OR)</option>
         <option value="portaNxor">Porta Nxor (EXCLUSIVE NOT OR)</option>
     </select>
-    
-    <div id="divPortaLogica">
-        <button id="portaA" value="false" type="button" class="btn btn-danger"
-            data-bs-toggle="button">Off</button>
-        <button id="portaB" value="false" type="button" class="btn btn-danger"
-            data-bs-toggle="button">Off</button>
+
+    <div id="divTelaInicial">
+        <div id="divP" value="portaNot">
+            <p id="txt_portas">PORTA NOT</p>
+            <div id="divImg">
+                <img id="imgNotInicial" src="img/porta-notTESTE.png">
+            </div>
+            <div id="divImgTv">
+                <img id="imgTvNotInicial" src="img/tv-not.png">
+            </div>
+        </div>
+
+        <div id="divS" value="portaAnd">
+            <p id="txt_portas">PORTA AND</p>
+            <div id="divImg">
+                <img id="imgAndInicial" src="img/porta-andTESTE.png">
+            </div>
+            <div id="divImgTv">
+                <img id="imgTvAndInicial" src="img/tv-and.png">
+            </div>
+        </div>
+
+        <div id="divS" value="portaNand">
+            <p id="txt_portas">PORTA NAND</p>
+            <div id="divImg">
+                <img id="imgNandInicial" src="img/porta-nandTESTE.png">
+            </div>
+            <div id="divImgTv">
+                <img id="imgTvNandInicial" src="img/tv-nand.png">
+            </div>
+        </div>
+
+        <div id="divS" value="portaOr">
+            <p id="txt_portas">PORTA OR</p>
+            <div id="divImg">
+                <img id="imgOrInicial" src="img/porta-orTESTE.png">
+            </div>
+            <div id="divImgTv">
+                <img id="imgTvOrInicial" src="img/tv-or.png">
+            </div>
+        </div>
+
+        <div id="divS" value="portaNor">
+            <p id="txt_portas">PORTA NOR</p>
+            <div id="divImg">
+                <img id="imgNorInicial" src="img/porta-norTESTE.png">
+            </div>
+            <div id="divImgTv">
+                <img id="imgTvNorInicial" src="img/tv-nor.png">
+            </div>
+        </div>
+
+        <div id="divS" value="portaXor">
+            <p id="txt_portas">PORTA XOR</p>
+            <div id="divImg">
+                <img id="imgXorInicial" src="img/porta-xorTESTE.png">
+            </div>
+            <div id="divImgTv">
+                <img id="imgTvXorInicial" src="img/tv-xor.png">
+            </div>
+        </div>
+
+        <div id="divS" value="portaNxor">
+            <p id="txt_portas">PORTA NXOR</p>
+            <div id="divImg">
+                <img id="imgNxorInicial" src="img/porta-xnorTESTE.png">
+            </div>
+            <div id="divImgTv">
+                <img id="imgTvNxorInicial" src="img/tv-xnor.png">
+            </div>
+        </div>
     </div>
 
-    <div id="divImg">
-        <img id="imgNot" src="/img/porta-not.webp">
-        <img id="imgAnd" src="/img/porta-and.webp">
-        <img id="imgOr" src="/img/porta-or.webp">
-        <img id="imgNor" src="/img/porta-nor.webp">
-        <img id="imgNand" src="/img/porta-nand.webp">
-        <img id="imgXor" src="/img/porta-xor.webp">
-        <img id="imgNxor" src="/img/porta-Nxor.webp">
+    <div id="simulacao">
+        <div id="divPortaLogica">
+            <button id="portaA" value="false" type="button" class="btn btn-danger" data-bs-toggle="button"
+                style="display: none;">0</button>
+            <button id="portaB" value="false" type="button" class="btn btn-danger" data-bs-toggle="button"
+                style="display: none;">0</button>
+        </div>
+
+        <div id="divImgSimulacao" style="display: none;">
+            <img id="imgNot" src="img/porta-notTESTE.png">
+            <img id="imgAnd" src="img/porta-andTESTE.png">
+            <img id="imgOr" src="img/porta-orTESTE.png">
+            <img id="imgNor" src="img/porta-norTESTE.png">
+            <img id="imgNand" src="img/porta-nandTESTE.png">
+            <img id="imgXor" src="img/porta-xorTESTE.png">
+            <img id="imgNxor" src="img/porta-xnorTESTE.png">
+        </div>
+
+        <div id="divResultado">
+            <img class="Lampada" id="imgApagada" src="img/lampada-apagadaTESTE.png" width="320" height="250"
+                style="display: none;">
+            <img class="Lampada" id="imgAcesa" src="img/lampada-acesaTESTE.png" width="320" height="250"
+                style="display: none;">
+        </div>
+
+        <div id="divTabelas" style="display: none;">
+            <img id="imgTNot" src="img/tv-not.png">
+            <img id="imgTAnd" src="img/tv-and.png">
+            <img id="imgTNand" src="img/tv-nand.png">
+            <img id="imgTOr" src="img/tv-or.png">
+            <img id="imgTNor" src="img/tv-nor.png">
+            <img id="imgTXor" src="img/tv-xor.png">
+            <img id="imgTNxor" src="img/tv-xnor.png">
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"

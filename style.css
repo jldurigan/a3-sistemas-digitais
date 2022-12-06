@@ -1,17 +1,31 @@
-#divPortaLogica {
-    display: inline-block;
-    width: 30%;
-    text-align: center;
-    height: 30%;
-    position: relative;
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+
+#simulacao {
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    border-radius: 30px;
 }
 
-#divImg {
-    display: inline-block;
+#divPortaLogica {
+    float:left;
     width: 30%;
+    height: 300px;
     text-align: center;
-    height: 30%;
-    position: relative;
+    margin-left: 5%;
+}
+#divImgSimulacao{
+    float:left;
+    width: 30%;
+    height: 300px;
+    text-align: center;
+}
+#divResultado{
+    float:left;
+    width: 30%;
+    height:300px;
+    text-align: center;
 }
 
 #selectPortaLogica {
@@ -19,18 +33,78 @@
     text-align: center;
     margin-left: 25%;
     margin-top: 5%;
+    margin-bottom: 10%;
 }
 
+#portaA  {
+    display:block;
+    text-align: center;
+    margin: 100px 45%;
+    height: 50px;
+    width: 50px; 
+ }
 
+#portaB  {
+    display:block;
+    text-align: center;
+    margin: -75px 45%;
+    height: 50px;
+    width: 50px;    
+ }
 
-#portaA {
-    margin-top: 20%;
+ #divTabelas {
+    margin-left: 38%;
+ }
+
+#divP {
+    width: 80%;
+    height: 350px;
+    background-color: rgb(178, 178, 243);
     margin-left: 10%;
-    display: block;
+    border-radius: 30px;
+}
+#divP:hover{top:-4px;box-shadow:0 4px 4px #999;}
+
+#divS {
+    width: 80%;
+    height: 350px;
+    background-color: rgb(178, 178, 243);
+    margin-left: 10%;
+    border-radius: 30px;
+    margin-top: 50px;
+}
+#divS:hover{top:-10px;box-shadow:0 10px 10px #999;}
+
+#divImg {
+    float:left;
+    width: 50%;
+    height: 300px;
+    align-self: center;
+    text-align: center;
 }
 
-#portaB {
-    margin-top: 10%;
-    margin-left: 10%;
-    display: block;
+#divImgTv {
+    float:left;
+    width: 50%;
+    height:300px;
+    align-self: center;
+    text-align: center;
+}
+
+#txt_portas {
+    margin-left: 43%;
+    font-weight: bold;
+    font-size: x-large;
+    font-family: 'Klee One', cursive;
+}
+
+#membros{
+    font-size: 250%;
+    margin-top: 3%;
+    text-align: center;
+    font-family: 'Klee One', cursive;
+}
+
+#fonte{
+    font-family: 'Klee One', cursive; 
 }
